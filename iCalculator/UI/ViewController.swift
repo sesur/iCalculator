@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         //
         
         
+        
+        
         //MARK:- Solution: 2
         if userIsInTheMiddleOfTyping {
             guard let textCurrentlyInDisplay = display.text else { return }
