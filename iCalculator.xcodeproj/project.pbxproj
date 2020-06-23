@@ -14,6 +14,7 @@
 		CA20165D2479464C00EDE816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA20165C2479464C00EDE816 /* Assets.xcassets */; };
 		CA2016602479464C00EDE816 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA20165E2479464C00EDE816 /* LaunchScreen.storyboard */; };
 		CA20166B2479464C00EDE816 /* iCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA20166A2479464C00EDE816 /* iCalculatorTests.swift */; };
+		CA20167B2479494800EDE816 /* CalculatorBrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA20167A2479494800EDE816 /* CalculatorBrian.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CA2016662479464C00EDE816 /* iCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA20166A2479464C00EDE816 /* iCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCalculatorTests.swift; sourceTree = "<group>"; };
 		CA20166C2479464C00EDE816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA20167A2479494800EDE816 /* CalculatorBrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrian.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +81,9 @@
 		CA2016522479464A00EDE816 /* iCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				CA2016532479464A00EDE816 /* AppDelegate.swift */,
-				CA2016552479464A00EDE816 /* SceneDelegate.swift */,
-				CA2016572479464A00EDE816 /* ViewController.swift */,
-				CA2016592479464A00EDE816 /* Main.storyboard */,
-				CA20165C2479464C00EDE816 /* Assets.xcassets */,
-				CA20165E2479464C00EDE816 /* LaunchScreen.storyboard */,
-				CA2016612479464C00EDE816 /* Info.plist */,
+				CA201678247947F800EDE816 /* UI */,
+				CA2016752479468F00EDE816 /* Main */,
+				CA72E0CD24903CCF00FEABDE /* Engine */,
 			);
 			path = iCalculator;
 			sourceTree = "<group>";
@@ -97,6 +95,43 @@
 				CA20166C2479464C00EDE816 /* Info.plist */,
 			);
 			path = iCalculatorTests;
+			sourceTree = "<group>";
+		};
+		CA2016752479468F00EDE816 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CA2016592479464A00EDE816 /* Main.storyboard */,
+				CA2016532479464A00EDE816 /* AppDelegate.swift */,
+				CA2016552479464A00EDE816 /* SceneDelegate.swift */,
+				CA20165C2479464C00EDE816 /* Assets.xcassets */,
+				CA2016612479464C00EDE816 /* Info.plist */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CA201678247947F800EDE816 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CA2016792479480C00EDE816 /* Launch */,
+				CA2016572479464A00EDE816 /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CA2016792479480C00EDE816 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				CA20165E2479464C00EDE816 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		CA72E0CD24903CCF00FEABDE /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				CA20167A2479494800EDE816 /* CalculatorBrian.swift */,
+			);
+			path = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +237,7 @@
 			files = (
 				CA2016582479464A00EDE816 /* ViewController.swift in Sources */,
 				CA2016542479464A00EDE816 /* AppDelegate.swift in Sources */,
+				CA20167B2479494800EDE816 /* CalculatorBrian.swift in Sources */,
 				CA2016562479464A00EDE816 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YTY3T23FT4;
-				INFOPLIST_FILE = iCalculator/Info.plist;
+				INFOPLIST_FILE = iCalculator/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YTY3T23FT4;
-				INFOPLIST_FILE = iCalculator/Info.plist;
+				INFOPLIST_FILE = iCalculator/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,8 +1,4 @@
-//
-//  SceneDelegate.swift
-//  iCalculator
-//
-//  Created by Sergiu on 5/23/20.
+
 //  Copyright © 2020 Sergiu. All rights reserved.
 //
 
