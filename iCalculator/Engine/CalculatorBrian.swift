@@ -4,35 +4,21 @@
 
 import Foundation
 
-
-let formatter: NumberFormatter = {
-       let formatter = NumberFormatter()
-       formatter.numberStyle = .decimal
-       formatter.maximumFractionDigits = 6
-       formatter.notANumberSymbol = "Error"
-       formatter.groupingSeparator = " "
-       formatter.locale = Locale.current
-       return formatter
-   }()
-
-
 struct CalculatorBrain {
     private var accumulator: Double?
     private var descriptionAccumulator: String?
     
-    
     //private var internalProgram = [PropertyList]()
     
-    
-//    var description: String? {
-//        get {
-//            if pendingBinaryOperation == nil {
-//                return descriptionAccumulator
-//            } else {
-//               return pendingBinaryOperation.de
-//            }
-//        }
-//    }
+    //    var description: String? {
+    //        get {
+    //            if pendingBinaryOperation == nil {
+    //                return descriptionAccumulator
+    //            } else {
+    //               return pendingBinaryOperation.de
+    //            }
+    //        }
+    //    }
     
     var result: Double? {
         get {
@@ -54,7 +40,6 @@ struct CalculatorBrain {
         //internalProgram.append(operand as PropertyList)
     }
     
- 
     mutating func performOperation(_ symbol: String) {
         //        //internalProgram.append(symbol as AnyObject)
         if let operationType = operations[symbol] {
@@ -84,56 +69,49 @@ struct CalculatorBrain {
     }
     
     private var operations: [String: Operations] = [
-         "ƞ" : Operations.constant(.pi),
-         "e" : Operations.constant(M_E),
-         "±" : Operations.unaryOperation({-$0}),
-         "√" : Operations.unaryOperation(sqrt),
-         "cos" : Operations.unaryOperation(cos),
-         "sin" : Operations.unaryOperation(sin),
-         "×" : Operations.binaryOperation({ $0 * $1 }),
-         "÷" : Operations.binaryOperation({ $0 / $1 }),
-         "+" : Operations.binaryOperation({ $0 + $1 }),
-         "−" : Operations.binaryOperation({ $0 - $1 }),
-         "=" : Operations.equal
-     ]
-     
+        "ƞ" : Operations.constant(.pi),
+        "e" : Operations.constant(M_E),
+        "±" : Operations.unaryOperation({-$0}),
+        "√" : Operations.unaryOperation(sqrt),
+        "cos" : Operations.unaryOperation(cos),
+        "sin" : Operations.unaryOperation(sin),
+        "×" : Operations.binaryOperation({ $0 * $1 }),
+        "÷" : Operations.binaryOperation({ $0 / $1 }),
+        "+" : Operations.binaryOperation({ $0 + $1 }),
+        "−" : Operations.binaryOperation({ $0 - $1 }),
+        "=" : Operations.equal
+    ]
+    
     private enum Operations {
-//        case nullaryOperation:(()-> Double, String)
+        //        case nullaryOperation:(()-> Double, String)
         case constant(Double)
         case unaryOperation((Double)-> Double)
         case binaryOperation((Double, Double) -> Double)
         case equal
     }
     
-    
-    
-    
-    
     private var pendingBinaryOperation: PendingBinaryOperation?
     
     private struct PendingBinaryOperation {
         var binaryFunction: (Double, Double) -> Double
         var firstOperand: Double
-//        var descriptionFunction: (String, String)-> String
-//        var descriptionOperand: String
-
+        //        var descriptionFunction: (String, String)-> String
+        //        var descriptionOperand: String
+        
         
         func perform(with secondOperand: Double) -> Double {
             return binaryFunction(firstOperand, secondOperand)
         }
         
-//        func performDescription(with secondOperand: String) -> String {
-//            return descriptionFunction(descriptionOperand, secondOperand)
-//        }
+        //        func performDescription(with secondOperand: String) -> String {
+        //            return descriptionFunction(descriptionOperand, secondOperand)
+        //        }
     }
     
     mutating func clear() {
         accumulator = 0.0
         pendingBinaryOperation = nil
     }
-    
-    
-   
     
     //    func clear() {
     //        accumulator = 0.0
@@ -162,3 +140,13 @@ struct CalculatorBrain {
     //    }
     
 }
+
+let formatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    formatter.maximumFractionDigits = 6
+    formatter.notANumberSymbol = "Error"
+    formatter.groupingSeparator = " "
+    formatter.locale = Locale.current
+    return formatter
+}()

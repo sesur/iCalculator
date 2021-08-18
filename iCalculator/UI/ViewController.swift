@@ -9,8 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var display: UILabel!
     
     private var userIsInTheMiddleOfTyping = false
-    
-    //    private var brain = CalculatorBrain()
+    private var brain = CalculatorBrain()
     
     var displayValue: Double {
         get {
@@ -36,9 +35,6 @@ class ViewController: UIViewController {
         //        }
         //
         
-        
-        
-        
         //MARK:- Solution: 2
         if userIsInTheMiddleOfTyping {
             guard let textCurrentlyInDisplay = display.text else { return }
@@ -61,12 +57,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    private var brain = CalculatorBrain()
-    
     @IBAction private func performOperaion(_ sender: UIButton) {
-        
         if userIsInTheMiddleOfTyping {
             brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false
@@ -80,12 +71,9 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func cleanDisplayLabel(_ sender: Any) {
         displayValue = 0
         userIsInTheMiddleOfTyping = false
         brain.clear()
     }
 }
-
-
