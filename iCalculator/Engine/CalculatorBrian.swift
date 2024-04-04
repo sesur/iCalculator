@@ -1,7 +1,3 @@
-
-//  Copyright © 2020 Sergiu. All rights reserved.
-//
-
 import Foundation
 
 struct CalculatorBrain {
